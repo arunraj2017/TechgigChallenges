@@ -67,7 +67,11 @@ public class SquareMatrix {
 		int count = 0;
 		for (int i = 0; i < mtx.length; ++i) {
 			for (int j = 0; j < mtx[i].length; ++j) {
-				count += checkPresent(mtx, i, j, word);
+				int val = checkPresent(mtx, i, j, word);
+				if(val > 0) {
+					count += val;
+					j = j+ word.length(); 
+				}
 			}
 
 		}
